@@ -16,8 +16,10 @@ module.exports = {
   parserOptions: {
     project: ["tsconfig.json", "tsconfig.dev.json"],
     sourceType: "module",
+    tsconfigRootDir: __dirname,
   },
   ignorePatterns: [
+    '.eslintrc.js',
     "/lib/**/*", // Ignore built files.
   ],
   plugins: [
@@ -27,5 +29,6 @@ module.exports = {
   rules: {
     "quotes": ["error", "double"],
     "import/no-unresolved": 0,
+    "@typescript-eslint/no-var-requires": "off",
   },
 };
